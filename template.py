@@ -2,25 +2,19 @@
 import os
 from pathlib import Path
 
+package_name = "mongodb_connect"
 
 #names of files
 list_of_files = [ 
-    ".github/workflows/.gitkeep",    #all workflows are stored in this file
-    #all source code will be in this folder
+    ".github/workflows/ci.yaml",    
     "src/__init__.py",
-    "src/components/__init__.py",       #all components of the ML pipeline 
-    "src/components/data_transformation.py",
-    "src/components/model_trainer.py",
-    "src/components/model_evaluation.py",
-    "src/pipeline/__init__.py",
-    "src/pipeline/training_pipline.py",
-    "src/pipeline/prediction_pipeline.py",
-    "src/utils/__init__.py",
-    "src/utils/utils.py",
-    "src/logger/logging.py",
-    "src/exception/exception",
+    f"src/{package_name}/__init__.py",      
+    f"src/{package_name}/mongo_crud.py",
+    "tests/__init__.py"
     "tests/unit/__init__.py",
-    "tests/integrstion/__init__.py",
+    "tests/unit/unit.py",
+    "tests/integration/__init__.py",
+    "tests/integration/int.py",
     "init_setup.sh",
     "requirments.txt",
     "requirments_dev.txt",
@@ -28,7 +22,8 @@ list_of_files = [
     "setup.cfg",
     "pyproject.toml",
     "tox.ini",
-    "experiments/experiments.ipynb"
+    "experiments/experiments.ipynb",
+    ".gitignore"
 ]
 
 for filepath in list_of_files:
